@@ -1,89 +1,173 @@
+/* ===============================
+   RESET
+================================*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ===============================
+   FONDO ANIMADO ARCOÍRIS NEÓN
+================================*/
 body {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    background: radial-gradient(circle, #101C29, #0A1C3D, #2868C6, #91D2F4, #CBA2EA, #3F3381, #1D1F5A);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background: linear-gradient(
+        120deg,
+        #ff00c8,
+        #ff8a00,
+        #ffe600,
+        #35ff00,
+        #00ffc8,
+        #0099ff,
+        #7a00ff,
+        #ff00c8
+    );
+    background-size: 600% 600%;
+    animation: rainbowFlow 12s ease infinite;
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 40px 20px;
+
+    /* 🔥 FIX: PERMITIR SCROLL */
+    overflow-y: auto;
 }
 
+/* Animación del arcoíris suave */
+@keyframes rainbowFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position:   0% 50%; }
+}
+
+
+/* ===============================
+   CONTENEDOR PRINCIPAL NEÓN
+================================*/
 .container {
-    background: rgba(255, 255, 255, 0.633);
-    max-width: 600px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    max-width: 650px;
     width: 100%;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.3),
+        0 0 25px rgba(255,255,255,0.2),
+        inset 0 0 15px rgba(255,255,255,0.15);
+
+    animation: neonPulse 4s infinite ease-in-out;
+
+    /* 🔥 FIX: Permitir que crezca y se vea completo */
+    margin-bottom: 60px;
 }
 
+@keyframes neonPulse {
+    0%   { box-shadow: 0 0 18px rgba(255,255,255,0.25); }
+    50%  { box-shadow: 0 0 28px rgba(255,255,255,0.35); }
+    100% { box-shadow: 0 0 18px rgba(255,255,255,0.25); }
+}
+
+
+/* ===============================
+   TÍTULOS NEÓN
+================================*/
 h1 {
-    color: #1e3c72;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 30px;
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 12px #fff,
+        0 0 20px #ff00e1,
+        0 0 40px #ff00e1;
 }
 
 h3 {
-    color: #000000;
+    color: #fff;
     margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(255,255,255,0.8);
 }
 
 .section {
     margin-bottom: 25px;
 }
 
+
+/* ===============================
+   LABELS
+================================*/
 label {
     display: block;
-    color: #333;
+    color: #fff;
     margin-bottom: 8px;
     font-weight: 500;
+    text-shadow: 0 0 5px rgba(255,255,255,0.8);
 }
 
+
+/* ===============================
+   TEXTAREA NEÓN
+================================*/
 textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
     font-size: 16px;
     resize: vertical;
     min-height: 80px;
-    font-family: inherit;
-    transition: border-color 0.3s;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 textarea:focus {
     outline: none;
-    border-color: #2a5298;
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff;
 }
 
 .char-count {
     text-align: right;
-    color: #666;
+    color: #eee;
     font-size: 12px;
     margin-top: 5px;
 }
 
+
+/* ===============================
+   MATRIZ DISPLAY
+================================*/
 .matriz-display {
-    background: #f5f5f5;
+    background: rgba(255,255,255,0.12);
     padding: 20px;
-    border-radius: 4px;
-    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    border: 2px solid rgba(255,255,255,0.25);
     min-height: 60px;
     font-family: 'Courier New', monospace;
-    color: #333;
-    line-height: 1.8;
+    color: #fff;
+    white-space: pre-wrap;
+    text-shadow: 0 0 5px rgba(255,255,255,0.6);
 }
 
+
+/* ===============================
+   INPUTS DE MATRIZ
+================================*/
 .matriz-input {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -93,91 +177,79 @@ textarea:focus {
 
 .matriz-input input {
     padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 18px;
+    border: 2px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    font-size: 20px;
     text-align: center;
-    transition: border-color 0.3s;
+    color: #fff;
+
+    backdrop-filter: blur(6px);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .matriz-input input:focus {
     outline: none;
-    border-color: #2a5298;
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff;
 }
 
+
+/* ===============================
+   BOTONES NEÓN
+================================*/
 button {
     width: 100%;
     padding: 15px;
-    background: #ad82c8;
+    background: #ff00d4;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 18px;
-    font-weight: 600;
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.3s;
-    margin: 20px 0;
+
+    box-shadow:
+        0 0 10px #ff00d4,
+        0 0 20px #ff00d4,
+        0 0 35px #ff00d4;
+    transition: transform 0.15s, box-shadow 0.3s;
 }
 
 button:hover {
-    background: #1e3c72;
-    
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-.resultado-box {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 4px;
-    border: 2px solid #e0e0e0;
-    min-height: 60px;
-    font-family: 'Courier New', monospace;
-    color: #333;
-    word-wrap: break-word;
-}
-
-.error {
-    color: #d32f2f;
-    background: #ffebee;
-    border-color: #d32f2f;
-}
-button {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #2a5298, #1e3c72);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.4s, transform 0.2s, box-shadow 0.3s;
-    margin: 20px 0;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(-3px);
+    transform: scale(1.05);
+    box-shadow:
+        0 0 15px #ff00d4,
+        0 0 30px #ff00d4,
+        0 0 45px #ff00d4;
 }
 
 button:active {
     transform: scale(0.97);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.footer-box {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto 0; /* Separa del contenido principal */
-    padding: 15px;
-    background: rgba(42, 82, 152, 0.8);
-    color: white;
+
+
+/* ===============================
+   RESULTADOS
+================================*/
+.resultado-box {
+    background: rgba(255,255,255,0.12);
+    padding: 20px;
     border-radius: 8px;
-    font-size: 14px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    font-family: Georgia, "Times New Roman", Times, serif;
+    border: 2px solid rgba(255,255,255,0.25);
+    min-height: 60px;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+
+    text-shadow: 0 0 5px rgba(255,255,255,0.6);
+}
+
+
+/* ERROR */
+.error {
+    color: #ff4e4e;
+    background: rgba(255, 0, 0, 0.2);
+    border-color: #ff4e4e;
+    box-shadow: 0 0 10px #ff4e4e;
 }
