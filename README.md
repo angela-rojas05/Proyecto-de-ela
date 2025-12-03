@@ -37,3 +37,40 @@ Puedes escribir un mensaje (máximo 30 caracteres) y una clave en forma de matri
 
 ---
 
+
+## Detalles Matemáticos
+
+El cifrado Hill se basa en **álgebra lineal y aritmética modular**:
+
+1. **Conversión de letras a números:**  
+   Cada letra se transforma según: A=0, B=1, …, Z=25.
+
+2. **Multiplicación por la matriz clave:**  
+   Para encriptar, cada par de números `[x1, x2]` se multiplica por la matriz clave `K` módulo 26:
+
+3. **Matriz inversa para desencriptar:**  
+   Para obtener el mensaje original, se calcula la matriz inversa `K⁻¹` módulo 26:
+
+4. **Padding:**  
+   Si el número de letras es impar, se añade una `X` para completar el último par.
+
+5. **Desencriptación paso a paso:**  
+   - Se convierte el mensaje cifrado a números.  
+   - Se multiplica por la matriz inversa módulo 26.  
+   - Se obtiene el mensaje original convirtiendo los números nuevamente a letras.
+
+---
+
+
+## Personalización propia
+
+- Gradiente radial de fondo y contenedores con sombra.  
+- Botones animados con **hover**, **rebote** y cambio de color.  
+- Contador de caracteres dinámico.  
+- Pie de página centrado en caja de texto con tu nombre y materia.
+
+---
+
+## Autor 
+
+Ángela Yaritzi Rojas Brito – Fundamentos de Álgebra
