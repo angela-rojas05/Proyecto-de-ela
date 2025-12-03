@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptación Hill</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
+
         <h1>Encriptación Hill</h1>
-        
+
         <div class="section">
             <label for="mensaje">Mensaje (máx. 30 caracteres)</label>
             <textarea id="mensaje" maxlength="30" placeholder="Escribe tu mensaje aquí..."></textarea>
@@ -31,21 +33,25 @@
             </div>
         </div>
 
+        <!-- BOTÓN ENCRIPTAR -->
         <button id="encriptar">Encriptar</button>
 
+        <!-- RESULTADO DE ENCRIPTACIÓN -->
+        <div class="section">
+            <h3>Resultado encriptado</h3>
+            <div id="resultadoEncriptado" class="resultado-box"></div>
+        </div>
+
+        <!-- BOTÓN DESENCRIPTAR -->
         <button id="desencriptar">Desencriptar</button>
 
-
+        <!-- RESULTADO DE DESENCRIPTACIÓN -->
         <div class="section">
-            <h3>Resultado</h3>
-            <div id="resultado" class="resultado-box"></div>
-        </div>
-        <div class="footer-box">
-        Ángela Yaritzi Rojas Brito 1B | Fundamentos de Álgebra
+            <h3>Resultado desencriptado</h3>
+            <div id="resultadoDesencriptado" class="resultado-box"></div>
         </div>
 
     </div>
-
 
     <script src="script.js"></script>
 </body>
