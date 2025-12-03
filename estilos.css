@@ -49,7 +49,7 @@ body {
    CONTENEDOR PRINCIPAL NEÓN
 ================================*/
 .container {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.575);
     border: 2px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -81,7 +81,7 @@ body {
    TÍTULOS NEÓN
 ================================*/
 h1 {
-    color: #ffffff;
+    color: #131212;
     text-align: center;
     margin-bottom: 30px;
     font-size: 36px;
@@ -94,7 +94,7 @@ h1 {
 }
 
 h3 {
-    color: #fff;
+    color: #040404;
     margin-bottom: 15px;
     font-size: 20px;
     font-weight: 600;
